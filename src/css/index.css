@@ -1,0 +1,460 @@
+:root {
+	--color-primary: #6741d9;
+	--color-primary-light: #7950f2;
+	--color-text: #dee2e6;
+	--color-text-dark: #adb5bd;
+	--color-background-100: #343a40;
+	--color-background-500: #2b3035;
+	--color-background-900: #212529;
+	--color-red: #fa5252;
+	--color-red-dark: #e03131;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-text);
+	background-color: var(--color-background-900);
+	padding: 2rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main {
+	margin-bottom: 5rem;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 7.2rem;
+	padding: 0 3.2rem;
+	background-color: var(--color-primary);
+	border-radius: 0.9rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 3rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+}
+.home-nav {
+	text-decoration: none;
+	color: inherit;
+}
+
+.links {
+	display: flex;
+	list-style: none;
+	margin-right: 2rem;
+}
+
+.nav-link {
+	margin-left: 1.8rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--color-text);
+	background-color: var(--color-background-100);
+	padding: 1.2rem 1.5rem;
+	border: 0.05rem solid var(--color-text);
+	border-radius: 1rem;
+	font-weight: 600;
+	transition: all 0.2s;
+}
+
+.nav-link:hover {
+	color: var(--color-text-dark);
+	background-color: var(--color-background-500);
+
+	border: 0.05rem solid var(--color-text-dark);
+}
+
+.login-nav {
+	background-color: var(--color-text);
+	color: var(--color-background-100);
+	border: none;
+	padding: 1.2rem 2rem;
+	transition: all 0.2s;
+}
+
+.login-nav:hover {
+	background-color: var(--color-text-dark);
+	color: var(--color-background-100);
+	border: none;
+}
+
+.logout-nav {
+	background-color: var(--color-red);
+	color: var(--color-background-900);
+	border: none;
+}
+
+.logout-nav:hover {
+	background-color: var(--color-red-dark);
+	color: var(--color-background-100);
+	border: none;
+}
+.cart {
+	position: absolute;
+	right: 18rem;
+	margin-top: 0.8rem;
+	text-decoration: none;
+	color: var(--color-text);
+	font-size: 1.5rem;
+}
+
+.cart_icon {
+	width: 4rem;
+	height: 4rem;
+	fill: var(--color-background-500);
+	transition: all 0.2s;
+}
+
+.cart-num-items {
+	position: absolute;
+	display: inline-block;
+	right: -1.5rem;
+	background-color: var(--color-red);
+	width: 2.25rem;
+	height: 2.25rem;
+	text-align: center;
+	border-radius: 100%;
+	transition: all 0.2s;
+}
+
+.cart:hover .cart-num-items {
+	background-color: var(--color-red-dark);
+}
+
+.cart:hover .cart_icon {
+	fill: var(--color-background-900);
+}
+
+.search {
+	justify-self: center;
+	border: none;
+	padding: 1.1rem 1.6rem;
+	font-size: 1.8rem;
+	border-radius: 0.7rem;
+	width: 50rem;
+	transition: all 0.3s;
+	color: var(--color-text);
+	background-color: var(--color-background-100);
+}
+
+.search::placeholder {
+	color: var(--color-text-dark);
+}
+
+.search:focus {
+	outline: none;
+	box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
+	transform: translateY(-2px);
+}
+
+.shopping-list {
+	width: 100%;
+	align-self: flex-start;
+	margin-top: 3rem;
+}
+
+.search-container {
+	margin-bottom: 3rem;
+	padding-left: 5rem;
+}
+
+.item-list {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 5rem;
+}
+
+.item-card {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-background-100);
+	width: 28rem;
+	font-size: 2rem;
+	border-radius: 2rem;
+	overflow: hidden;
+	transition: all 0.2s;
+	position: relative;
+}
+
+.item-card:hover {
+	transform: translateY(-0.3rem);
+}
+
+.card-img img {
+	width: 100%;
+	height: auto;
+}
+
+.card-details {
+	flex-grow: 1;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.item-description {
+	font-size: 1.4rem;
+}
+
+.card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-top: 1rem;
+}
+
+.price {
+	font-size: 1.8rem;
+}
+
+.buttons {
+	display: flex;
+	gap: 1rem;
+}
+
+.card-cart-icon {
+	width: 3rem;
+	height: 3rem;
+	fill: var(--color-primary-light);
+	transition: all 0.2s;
+}
+
+.card-favourit-icon {
+	width: 3rem;
+	height: 3rem;
+	fill: var(--color-red);
+	transition: all 0.2s;
+}
+
+.card-cart-icon:hover {
+	fill: var(--color-primary);
+}
+
+.card-favourit-icon:hover {
+	fill: var(--color-red-dark);
+}
+
+.add-to-cart-btn {
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+.set-favourite-btn {
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.footer {
+	width: 100%;
+	background-color: var(--color-primary);
+	color: var();
+	height: 8rem;
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	margin-top: auto;
+}
+
+.footer-icon {
+	width: 3rem;
+	height: 3rem;
+	fill: var(--color-text-dark);
+	margin: 1rem;
+}
+
+.form {
+	background-color: var(--color-background-100);
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	font-size: 2rem;
+	margin: 12rem;
+	border-radius: 1rem;
+}
+
+.form > h2 {
+	padding-bottom: 1.5rem;
+}
+
+.form-input {
+	margin-bottom: 2rem;
+	justify-self: center;
+	border: none;
+	padding: 1.1rem 1.6rem;
+	font-size: 1.8rem;
+	border-radius: 0.7rem;
+	width: 50rem;
+	transition: all 0.3s;
+	background-color: var(--color-text-dark);
+}
+
+.form-input::placeholder {
+	color: var(--color-background-900);
+}
+
+.form-input:focus {
+	outline: none;
+	box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
+	transform: translateY(-2px);
+	background-color: var(--color-text);
+}
+.form-label {
+	width: fit-content;
+	margin-bottom: 1rem;
+}
+
+.regester-btn {
+	width: fit-content;
+	margin-left: 2rem;
+	padding: 1rem 2rem;
+	border: none;
+	background-color: var(--color-primary);
+	color: var(--color-text);
+	font-size: 1.5rem;
+	border-radius: 1rem;
+}
+
+.form-bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+.other-form {
+	text-decoration: none;
+	color: var(--color-text-dark);
+	margin-left: 0.3rem;
+}
+
+.other-form:hover {
+	text-decoration: underline;
+	color: var(--color-text);
+}
+
+.cart-container {
+	align-self: flex-start;
+	margin-left: 30rem;
+	margin-top: 3rem;
+}
+
+.back-to-menu {
+	text-decoration: none;
+	color: var(--color-text-dark);
+	font-size: 1.5rem;
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.back-to-menu:hover {
+	text-decoration: underline;
+	color: var(--color-text);
+}
+
+.your-cart {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.cart-list {
+	list-style: none;
+	font-size: 2rem;
+	margin-bottom: 4rem;
+}
+
+.cart-item {
+	width: 70rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 0.1px solid var(--color-text-dark);
+	padding-bottom: 1rem;
+}
+
+.cart-btn {
+	width: 3.5rem;
+	height: 3.5rem;
+	background-color: var(--color-primary);
+	color: var(--color-text);
+	border: none;
+	outline: none;
+	padding: 1rem;
+	border-radius: 100%;
+	margin: 0 1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+.cart-btn:hover {
+	background-color: var(--color-primary-light);
+}
+
+.btn-cart-action {
+	margin-left: 2rem;
+	background-color: var(--color-primary);
+	border: none;
+	padding: 1rem 2rem;
+	color: var(--color-text);
+	font-size: 1.5rem;
+	border-radius: 1rem;
+	margin: 0 1rem;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+
+.btn-cart-action:hover {
+	background-color: var(--color-primary-light);
+}
+
+.clear-cart-btn {
+	background-color: var(--color-background-500);
+	border: none;
+	margin-left: 2rem;
+	padding: 1rem 2rem;
+	color: var(--color-text);
+	font-size: 1.5rem;
+	border-radius: 1rem;
+	margin: 0 1rem;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+
+.clear-cart-btn:hover {
+	background-color: var(--color-background-100);
+}
