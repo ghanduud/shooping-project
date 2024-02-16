@@ -458,3 +458,19 @@ main {
 .clear-cart-btn:hover {
 	background-color: var(--color-background-100);
 }
+
+.signin-message {
+	background-color: rgba(255, 0, 0, 0.2);
+	width: fit-content;
+	margin: 0 auto;
+	padding: 0.5rem;
+	border-radius: 0.8rem;
+}
+
+.added svg {
+	fill: var(--color-background-900);
+}
+
+.cart-buttons {
+	margin-top: 4rem;
+}
