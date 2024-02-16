@@ -25,7 +25,6 @@ function controlRegister(user) {
 
 function controlLogout() {
 	model.logout();
-	headerView.setHeader(model.isSignedIn());
 	window.location.href = 'home.html';
 }
 
