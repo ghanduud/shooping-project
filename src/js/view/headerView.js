@@ -30,8 +30,23 @@ export function setHeader(isSignedIn, user) {
 }
 
 export function handleLogOut(handler) {
-	const logoutBtn = document.querySelector('.logout-nav');
-	logoutBtn?.addEventListener('click', function () {
-		handler();
+	// const logoutBtn = document.querySelector('.logout-nav');
+	// logoutBtn?.addEventListener('click', function () {
+	// 	console.log('logout');
+	// 	handler();
+	// });
+
+	header.addEventListener('click', function (e) {
+		const logoutBtn = e.target.closest('.logout-nav');
+		if (logoutBtn) {
+			handler();
+		}
 	});
+
+	// cartList?.addEventListener('click', function (e) {
+	// 	const clearButton = e.target.closest('.clear-cart-btn');
+	// 	if (clearButton) {
+	// 		handler();
+	// 	}
+	// });
 }

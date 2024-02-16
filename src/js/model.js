@@ -148,7 +148,6 @@ export function addToTheCart(id) {
 
 	if (itemToAdd) {
 		const isItemInCart = currentUser.cart.some((cartItem) => cartItem.id === itemToAdd.id);
-		console.log(isItemInCart);
 
 		if (!isItemInCart) {
 			const cartItem = {

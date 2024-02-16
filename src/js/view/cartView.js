@@ -6,7 +6,6 @@ export function addingToCartList(cart) {
 	cartList.innerHTML = '';
 
 	if (cart?.length === 0) {
-		console.log('cart Empty');
 		const html = `<p>Your cart is empty</p>`;
 		cartList.insertAdjacentHTML('afterbegin', html);
 		return;
@@ -36,9 +35,11 @@ export function addingToCartList(cart) {
 }
 
 export function handleClearCart(handler) {
-	const clearBtn = document.querySelector('.clear-cart-btn');
-	clearBtn?.addEventListener('click', function () {
-		handler();
+	cartList?.addEventListener('click', function (e) {
+		const clearButton = e.target.closest('.clear-cart-btn');
+		if (clearButton) {
+			handler();
+		}
 	});
 }
 
